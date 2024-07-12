@@ -8,9 +8,6 @@
     "outDir": "./dist",
     "typeRoots": ["./node_modules/@types", "./src/types"]
   },
-  "scripts": {
-    "start": "ts-node-dev src/index.ts"
-  },
   "include": ["src/**/*.ts"],
   "exclude": ["node_modules"]
 }
