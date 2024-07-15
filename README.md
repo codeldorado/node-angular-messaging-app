@@ -1,76 +1,115 @@
-## Overview of the Recruitment Exercise
+# Chat Messenger Project
 
-This is a dummy project, which is used to demonstrate knowledge of node and Angular as well as development in general. It serves as an example with some bad practices included.
+This is a dummy project used to demonstrate knowledge of Node.js and Angular, as well as development in general. It serves as an example with some bad practices included.
 
-### Technologies:
+## Technologies
 
-- Backend: Node.js
-- Frontend: Angular
-- API: REST with an openapi.yaml file
+- **Backend**: Node.js (Express, TypeScript)
+- **Frontend**: Angular
+- **API**: REST with OpenAPI (openapi.yaml file)
 
-**Duration: 5-8 hours**
+## Repository Structure
 
-## Exercise Structure
+- `/backend` - Contains all backend-related files.
+- `/frontend` - Contains all frontend-related files.
+- `/docs` - Contains the OpenAPI definition file and any additional documentation.
 
-### Repository Structure:
+## Backend
 
-`/backend` - Should contain all backend-related files.
+### Installation
 
-`/frontend` - Contains all frontend-related files.
+1. Navigate to the `backend` directory:
 
-`/docs` - Contains the openapi.yaml file and any additional documentation.
+   ```bash
+   cd backend
+   ```
 
-#### Backend (/backend):
+2. Install the dependencies:
 
-index.ts - Should contain main server file using Node.js.
+   ```bash
+   npm install
+   ```
 
-#### Frontend (/frontend):
+### Running the Server
 
-app.component.ts - Main application file for Angular.
+1. Build and start the server:
 
-##### API Definition (/docs):
+   ```bash
+   npm run build
+   npm start
+   ```
 
-openapi.yaml
+2. The server will run on port `3000` by default. You can change the port by setting the `PORT` environment variable:
 
-## Tasks:
+   ```bash
+   export PORT=4000  # For Unix-like systems
+   set PORT=4000     # For Windows
+   npm start
+   ```
 
-### Backend:
-- [ ] Implement the backend architecture from scratch, which will support the Angular application's API calls.
-- [ ] Implement error handling.
-- [ ] Implement the plugin system for extensibility (Chatbot).
-- [ ] Add authentication for message sending.
-### Frontend:
-- [ ] Optimize data bindings and state management.
-- [ ] Improve the user interface responsiveness.
-- [ ] Implement a feature to display message status (sent, received).
-- [ ] Add seamless communication with the backend application.
-- [ ] Create a login form to allow users to log in and send messages.
-### API:
-- [ ] Review and if necessary correct RESTful API practices.
-- [ ] Ensure best practices in the API definition.
+### API Endpoints
 
-## General instructions
+- `GET /messages` - Retrieve all messages
+- `POST /message` - Send a new message
+- `POST /auth/register` - Register a new user
+- `POST /auth/login` - Log in a user
 
-- Make sure to follow best practices.
-- Pay attention to the code quality as well as software architecture. We value maintainability and readability.
-- We recommend documenting your changes and the reasoning behind them.
-- Git history is important. Make sure to commit your changes as you progress.
-- Feel free to ask questions if you have any doubts.
-- We are looking for a clean, well-structured solution that demonstrates your understanding of the technologies used.
+### OpenAPI Definition
 
-## Deliverables
+The OpenAPI definition for the API is located in the `/docs` directory as `openapi.yaml`.
 
-- [ ] send in files with your comments by (one of)
-    - Inline-Code-Comments and send us the files
-    - drop the files anywhere and send us the link
-    - upload the code to your own Repository (Avoid forking the repository and creating a PR, as this would make your solution visible to others)
-- [ ] A brief report summarizing the changes you made, why, and any additional recommendations if they had more time.
+## Frontend
 
-## Run instructions
+### Installation
 
-- Backend: `cd backend && npm install && npm run build && npm run start`
-- Frontend: `cd frontend && npm install && npm run serve`
-- API: `openapi.yaml` file contains the API definition.
-- Access the frontend at `http://localhost:4200`.
-- Access the backend at `http://localhost:3000`.
-- Note: The project is set up to run on localhost by default.
+1. Navigate to the `frontend` directory:
+
+   ```bash
+   cd frontend
+   ```
+
+2. Install the dependencies:
+
+   ```bash
+   npm install
+   ```
+
+### Running the Application
+
+1. Start the development server:
+
+   ```bash
+   npm run serve
+   ```
+
+2. The application will be accessible at `http://localhost:4200`.
+
+## Development
+
+### Backend
+
+The backend is implemented using Node.js and Express with TypeScript. The main server file is `src/index.ts`.
+
+### Error Handling
+
+Custom error handling middleware is implemented in `src/middlewares/errorHandler.ts`.
+
+### Plugin System
+
+The backend supports a plugin system for extensibility. Plugins are loaded from the `plugins` directory. A sample chatbot plugin is included in `plugins/chatbot.ts`.
+
+### Authentication
+
+User authentication is implemented using JWT. Authentication middleware is located in `src/middlewares/authMiddleware.ts`.
+
+### Frontend
+
+The frontend is implemented using Angular. The main application file is `src/app/app.component.ts`.
+
+### API
+
+The API follows RESTful practices and is defined using OpenAPI. The definition file is located in `/docs/openapi.yaml`.
+
+## Acknowledgments
+
+This project is a part of a recruitment exercise to demonstrate knowledge and skills in Node.js and Angular.
